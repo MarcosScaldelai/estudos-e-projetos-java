@@ -11,10 +11,10 @@ public class AnaliseNumerica {
 
         System.out.printf("Bem-vindo(a) ao Sistema de Análise Numérica.%n");
 
-        System.out.printf("%n> Primeiro número: ");
+        System.out.printf("> Primeiro número: ");
         primeiroNumero = scanner.nextInt();
 
-        System.out.printf("%n> Segundo número: ");
+        System.out.printf("> Segundo número: ");
         segundoNumero = scanner.nextInt();
 
         boolean numerosIguais = primeiroNumero == segundoNumero;
@@ -27,11 +27,11 @@ public class AnaliseNumerica {
         boolean ambosNumerosImpares = (primeiroNumero % 2 != 0) && (segundoNumero % 2 != 0);
 
         boolean ambosMultiplosDeCinco = (primeiroNumero % 5 == 0) && (segundoNumero % 5 == 0);
-        boolean umDosNumerosNegativo = (primeiroNumero < 0) || (segundoNumero < 0);
+        boolean exatamenteUmNegativo = (primeiroNumero < 0 || segundoNumero < 0) && !(primeiroNumero < 0 && segundoNumero <0);
         boolean nenhumIgualZero = (primeiroNumero != 0) && (segundoNumero != 0);
 
 
-        System.out.printf("%s%n ANÁLISE NUMÉRICA %n%s", SEPARADOR, SEPARADOR);
+        System.out.printf("%n%s%n ANÁLISE NUMÉRICA %n%s", SEPARADOR, SEPARADOR);
 
         System.out.printf(
                 "%n%nPrimeiro número: %d%n" +
@@ -56,7 +56,7 @@ public class AnaliseNumerica {
                 "Ambos são múltiplos de 5? %s%n" +
                 "Exatamente um é negativo? %s%n" +
                 "Nenhum é igual a zero? %s%n",
-                ambosMultiplosDeCinco, umDosNumerosNegativo, nenhumIgualZero
+                ambosMultiplosDeCinco, exatamenteUmNegativo, nenhumIgualZero
         );
 
         System.out.printf("%n%s", SEPARADOR);
