@@ -7,7 +7,7 @@ public class VerificacaoMaioridade {
         final String SEPARADOR = "======================";
         final String nomeUsuario;
         final int idadeUsuario;
-        String situacao = "";
+        String situacao = "MENOR";
 
         System.out.printf("Bem-vindo(a) ao Sistema de Verificação de Maioridade.%n");
 
@@ -17,20 +17,15 @@ public class VerificacaoMaioridade {
         System.out.printf("%n> Idade: ");
         idadeUsuario = scanner.nextInt();
 
-        boolean maiorDeIdade = idadeUsuario >= 18;
-        boolean menorDeIdade = idadeUsuario < 18;
-        boolean maioridade = false;
+        boolean maioridade = idadeUsuario >= 18;
 
-        if (menorDeIdade) {
-            situacao = "MENOR";
-        } if (maiorDeIdade) {
-            maioridade = true;
+        if (maioridade) {
             situacao = "MAIOR";
         }
 
         System.out.printf("%s%nVERIFICAÇÃO DE MAIORIDADE%n%s%n%n", SEPARADOR, SEPARADOR);
 
-        System.out.printf("Nome: %s%nIdade: %s%n%n", nomeUsuario, idadeUsuario);
+        System.out.printf("Nome: %s%nIdade: %d%n%n", nomeUsuario, idadeUsuario);
 
         System.out.printf("Resultado:%nA pessoa informada é %s de idade.%n", situacao);
 
